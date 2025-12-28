@@ -15,9 +15,10 @@ class CommandeRepository
         $client_id = $commande->getClient_id();
         $montant_total = $commande->getMontant();
         $statu = $commande->getStatut();
-        $stmt->bindParam("client_id", $client_id);
-        $stmt->bindParam("montant_total", $montant_total);
-        $stmt->bindParam("statu", $statu);
+        
+        $stmt->bindParam(":client_id", $client_id);
+        $stmt->bindParam(":montant_total", $montant_total);
+        $stmt->bindParam(":statu", $statu);
         $stmt->execute();
     }
     public function getAllCommandes()
